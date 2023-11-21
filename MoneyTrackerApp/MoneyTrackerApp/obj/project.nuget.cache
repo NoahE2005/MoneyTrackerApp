@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "jDF9GmdRIi3rG+DV1/trUT6AKMXwTNltPxKrr5nAV8J/DMUJVCAE0bX6Y73S4fLUlhlwkBMaUFp/0xTmuOitHg==",
+  "dgSpecHash": "9dtWNll3ZTlXg1MY/u/gNtDZOmvbAcnevzsegiaj3j2UYdW9/nJEedEAE986S0+vYAALLhp1kB2TtYLsnRuHuQ==",
   "success": true,
-  "projectFilePath": "E:\\Code\\Oefenen\\1\\MoneyTrackerApp\\MoneyTrackerApp\\MoneyTrackerApp.csproj",
+  "projectFilePath": "E:\\Code\\Git\\ProefExamen\\MoneyTrackerApp\\MoneyTrackerApp\\MoneyTrackerApp.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\noah.engeldal\\.nuget\\packages\\blazorcolorpicker\\2.3.0\\blazorcolorpicker.2.3.0.nupkg.sha512",
     "C:\\Users\\noah.engeldal\\.nuget\\packages\\blazorsvgcharts\\1.1.6\\blazorsvgcharts.1.1.6.nupkg.sha512",

@@ -67,7 +67,7 @@ namespace MoneyTrackerApp.Tabs
       }
       double Totaal = (double)TotaalMoney; // Ensure Totaal is a double
       string convertedAmount = TextFileHandler.CalculateCurrency(Totaal, currencyCode);
-      SumText.Text = $"Totaal: {convertedAmount}";
+      SumText.Text = $"Total: {convertedAmount}";
       #endregion
 
       #region Goal ProgressBar

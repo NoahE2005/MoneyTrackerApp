@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "E:\\Code\\Oefenen\\1\\MoneyTrackerApp\\MoneyTrackerApp\\MoneyTrackerApp.csproj": {}
+    "E:\\Code\\Git\\ProefExamen\\MoneyTrackerApp\\MoneyTrackerApp\\MoneyTrackerApp.csproj": {}
   },
   "projects": {
-    "E:\\Code\\Oefenen\\1\\MoneyTrackerApp\\MoneyTrackerApp\\MoneyTrackerApp.csproj": {
+    "E:\\Code\\Git\\ProefExamen\\MoneyTrackerApp\\MoneyTrackerApp\\MoneyTrackerApp.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "E:\\Code\\Oefenen\\1\\MoneyTrackerApp\\MoneyTrackerApp\\MoneyTrackerApp.csproj",
+        "projectUniqueName": "E:\\Code\\Git\\ProefExamen\\MoneyTrackerApp\\MoneyTrackerApp\\MoneyTrackerApp.csproj",
         "projectName": "MoneyTrackerApp",
-        "projectPath": "E:\\Code\\Oefenen\\1\\MoneyTrackerApp\\MoneyTrackerApp\\MoneyTrackerApp.csproj",
+        "projectPath": "E:\\Code\\Git\\ProefExamen\\MoneyTrackerApp\\MoneyTrackerApp\\MoneyTrackerApp.csproj",
         "packagesPath": "C:\\Users\\noah.engeldal\\.nuget\\packages\\",
-        "outputPath": "E:\\Code\\Oefenen\\1\\MoneyTrackerApp\\MoneyTrackerApp\\obj\\",
+        "outputPath": "E:\\Code\\Git\\ProefExamen\\MoneyTrackerApp\\MoneyTrackerApp\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\noah.engeldal\\AppData\\Roaming\\NuGet\\NuGet.Config",

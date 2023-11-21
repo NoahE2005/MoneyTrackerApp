@@ -7,55 +7,57 @@ using System.Threading.Tasks;
 
 namespace MoneyTrackerApp.Assests.Expenses
 {
-    public class TextFileHandler
+  public class TextFileHandler
+  {
+    private static string baseDirectory = null;
+
+    public static string GetCurrentMonthYear()
     {
-        public static string GetCurrentMonthYear()
+      DateTime currentDate = DateTime.Now;
+      return $"{currentDate.ToString("MM-yyyy")}";
+    }
+
+    public static string[] GetTextFilePath()
+    {
+      // Get the current directory.
+      string currentDirectory = Directory.GetCurrentDirectory();
+
+      // Go up three parent directories from the current directory.
+      for (int i = 0; i < 3; i++)
+      {
+        currentDirectory = Directory.GetParent(currentDirectory)?.FullName;
+        if (currentDirectory == null)
         {
-            DateTime currentDate = DateTime.Now;
-            return $"{currentDate.ToString("MM-yyyy")}";
+          throw new Exception("Unable to determine the base directory.");
         }
+      }
 
-        public static string[] GetTextFilePath()
+      baseDirectory = Path.Combine(currentDirectory, "Assests\\Expenses\\Text\\");
+      string monthYear = GetCurrentMonthYear();
+      string monthYearWithUppercase = char.ToUpper(monthYear[0]) + monthYear.Substring(1);
+
+      string folderPath = Path.Combine(baseDirectory, monthYearWithUppercase);
+
+      Directory.CreateDirectory(folderPath);
+
+      string[] fileNames = { "Exspense.txt", "Goals.txt" };
+      foreach (var fileName in fileNames)
+      {
+        string filePath = Path.Combine(folderPath, fileName);
+
+        if (!File.Exists(filePath))
         {
-            // Get the current directory.
-            string currentDirectory = Directory.GetCurrentDirectory();
-
-            // Go up three parent directories from the current directory.
-            for (int i = 0; i < 3; i++)
-            {
-                currentDirectory = Directory.GetParent(currentDirectory)?.FullName;
-                if (currentDirectory == null)
-                {
-                    throw new Exception("Unable to determine the base directory.");
-                }
-            }
-
-            string baseDirectory = Path.Combine(currentDirectory, "Assests\\Expenses\\Text\\");
-            string monthYear = GetCurrentMonthYear();
-            string monthYearWithUppercase = char.ToUpper(monthYear[0]) + monthYear.Substring(1);
-
-            string folderPath = Path.Combine(baseDirectory, monthYearWithUppercase);
-
-            Directory.CreateDirectory(folderPath);
-
-            string[] fileNames = { "Exspense.txt", "Goals.txt" };
-            foreach (var fileName in fileNames)
-            {
-              string filePath = Path.Combine(folderPath, fileName);
-
-              if (!File.Exists(filePath))
-              {
-                File.Create(filePath).Dispose();
-              }
-            }
-            string[] FileFull = { Path.Combine(folderPath, fileNames[0]), Path.Combine(folderPath, fileNames[1]) };
-            return FileFull;
+          File.Create(filePath).Dispose();
         }
+      }
+      string[] FileFull = { Path.Combine(folderPath, fileNames[0]), Path.Combine(folderPath, fileNames[1]) };
+      return FileFull;
+    }
 
     public static dynamic GetAllTextFileFolder()
     {
       // Make a reference to a directory.
-      DirectoryInfo di = new DirectoryInfo("E:\\Code\\Oefenen\\1\\MoneyTrackerApp\\MoneyTrackerApp\\Assests\\Expenses\\Text\\");
+      DirectoryInfo di = new DirectoryInfo(baseDirectory);
 
       // Get a reference to each directory in that directory.
       DirectoryInfo[] diArr = di.GetDirectories();
@@ -69,7 +71,8 @@ namespace MoneyTrackerApp.Assests.Expenses
       int TotaalPlus = 0;
       int TotaalMinus = 0;
 
-      foreach (FileInfo txtFile in txtFiles) {
+      foreach (FileInfo txtFile in txtFiles)
+      {
         using (StreamReader sr = txtFile.OpenText())
         {
           string line;
