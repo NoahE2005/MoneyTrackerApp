@@ -13,10 +13,13 @@
     <SourceRoot Include="C:\Users\noah.engeldal\.nuget\packages\" />
   </ItemGroup>
   <ImportGroup Condition=" '$(ExcludeRestorePackageImports)' != 'true' ">
+    <Import Project="$(NuGetPackageRoot)entityframework\6.4.4\buildTransitive\netcoreapp3.0\EntityFramework.props" Condition="Exists('$(NuGetPackageRoot)entityframework\6.4.4\buildTransitive\netcoreapp3.0\EntityFramework.props')" />
     <Import Project="$(NuGetPackageRoot)blazorsvgcharts\1.1.6\buildTransitive\BlazorSVGCharts.props" Condition="Exists('$(NuGetPackageRoot)blazorsvgcharts\1.1.6\buildTransitive\BlazorSVGCharts.props')" />
     <Import Project="$(NuGetPackageRoot)blazorcolorpicker\2.3.0\buildTransitive\BlazorColorPicker.props" Condition="Exists('$(NuGetPackageRoot)blazorcolorpicker\2.3.0\buildTransitive\BlazorColorPicker.props')" />
   </ImportGroup>
   <PropertyGroup Condition=" '$(ExcludeRestorePackageImports)' != 'true' ">
+    <PkgEntityFramework Condition=" '$(PkgEntityFramework)' == '' ">C:\Users\noah.engeldal\.nuget\packages\entityframework\6.4.4</PkgEntityFramework>
+    <PkgSystem_Data_SQLite_EF6 Condition=" '$(PkgSystem_Data_SQLite_EF6)' == '' ">C:\Users\noah.engeldal\.nuget\packages\system.data.sqlite.ef6\1.0.118</PkgSystem_Data_SQLite_EF6>
     <PkgReaLTaiizor-WinForm Condition=" '$(PkgReaLTaiizor-WinForm)' == '' ">C:\Users\noah.engeldal\.nuget\packages\realtaiizor-winform\3.8.2</PkgReaLTaiizor-WinForm>
     <PkgIntersoft_Crosslight Condition=" '$(PkgIntersoft_Crosslight)' == '' ">C:\Users\noah.engeldal\.nuget\packages\intersoft.crosslight\6.0.5000.975</PkgIntersoft_Crosslight>
     <PkgFontAwesome Condition=" '$(PkgFontAwesome)' == '' ">C:\Users\noah.engeldal\.nuget\packages\fontawesome\4.7.0</PkgFontAwesome>

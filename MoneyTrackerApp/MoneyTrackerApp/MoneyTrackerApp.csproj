@@ -15,6 +15,7 @@
     <PackageReference Include="Microsoft.Extensions.Configuration" Version="7.0.0" />
     <PackageReference Include="Microsoft.Extensions.Configuration.Json" Version="7.0.0" />
     <PackageReference Include="ReaLTaiizor-WinForm" Version="3.8.2" />
+    <PackageReference Include="System.Data.SQLite" Version="1.0.118" />
 	<PackageReference Include="WinForms.DataVisualization" Version="1.8.0" />
 	<PackageReference Include="BlazorSVGCharts" Version="1.1.6" />
 	<PackageReference Include="Intersoft.Crosslight.UI.DataVisualization" Version="6.0.5000.975" />

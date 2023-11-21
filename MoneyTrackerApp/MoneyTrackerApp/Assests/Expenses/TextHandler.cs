@@ -4,17 +4,20 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Globalization;
 
 namespace MoneyTrackerApp.Assests.Expenses
 {
   public class TextFileHandler
   {
     private static string baseDirectory = null;
+    private static string FileFormat = "MM-yyyy";
+    private static string[] fileNames = { "Exspense.txt", "Goals.txt" };
 
     public static string GetCurrentMonthYear()
     {
       DateTime currentDate = DateTime.Now;
-      return $"{currentDate.ToString("MM-yyyy")}";
+      return $"{currentDate.ToString(FileFormat)}";
     }
 
     public static string[] GetTextFilePath()
@@ -40,7 +43,6 @@ namespace MoneyTrackerApp.Assests.Expenses
 
       Directory.CreateDirectory(folderPath);
 
-      string[] fileNames = { "Exspense.txt", "Goals.txt" };
       foreach (var fileName in fileNames)
       {
         string filePath = Path.Combine(folderPath, fileName);
@@ -51,6 +53,7 @@ namespace MoneyTrackerApp.Assests.Expenses
         }
       }
       string[] FileFull = { Path.Combine(folderPath, fileNames[0]), Path.Combine(folderPath, fileNames[1]) };
+      CheckAndFillMissingFiles();
       return FileFull;
     }
 
@@ -63,6 +66,67 @@ namespace MoneyTrackerApp.Assests.Expenses
       DirectoryInfo[] diArr = di.GetDirectories();
 
       return diArr;
+    }
+
+    public static void CheckAndFillMissingFiles()
+    {
+      // Initialize closest and furthest dates with the current date.
+      DateTime closestDate = DateTime.Now;
+      DateTime furthestDate = DateTime.Now;
+
+      DirectoryInfo[] existingFiles = GetAllTextFileFolder();
+
+      foreach (DirectoryInfo filePath in existingFiles)
+      {
+        DateTime fileDate = ExtractDateFromFilePath(filePath.ToString());
+
+        // Check for closest date.
+        if (fileDate < closestDate)
+        {
+          closestDate = fileDate;
+        }
+
+        // Check for furthest date.
+        if (fileDate > furthestDate)
+        {
+          furthestDate = fileDate;
+        }
+      }
+
+      // Check for missing files and create them.
+      for (DateTime date = closestDate.AddMonths(1); date < furthestDate; date = date.AddMonths(1))
+      {
+        string monthYear = date.ToString(FileFormat);
+        string folderPath = Path.Combine(baseDirectory, char.ToUpper(monthYear[0]) + monthYear.Substring(1));
+
+        foreach (var fileSpots in existingFiles)
+        {
+          foreach (var fileName in fileNames)
+          {
+            string filePath = Path.Combine(folderPath, fileName);
+            Directory.CreateDirectory(folderPath);
+
+            if (!File.Exists(filePath))
+            {
+              File.Create(filePath).Dispose();
+            }
+          }
+        }
+      }
+    }
+
+    // Helper function to extract date from file path.
+    private static DateTime ExtractDateFromFilePath(string filePath)
+    {
+      // Assuming that the date is included in the file name.
+      string fileName = Path.GetFileNameWithoutExtension(filePath);
+      if (DateTime.TryParseExact(fileName, FileFormat, CultureInfo.InvariantCulture, DateTimeStyles.None, out DateTime fileDate))
+      {
+        return fileDate;
+      }
+
+      // Return DateTime.MinValue if parsing fails.
+      return DateTime.MinValue;
     }
 
     public static dynamic ProcessExpenseFile(DirectoryInfo FilePath)
