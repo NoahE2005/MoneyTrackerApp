@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<Project ToolsVersion="14.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup Condition=" '$(ExcludeRestorePackageImports)' != 'true' ">
+    <RestoreSuccess Condition=" '$(RestoreSuccess)' == '' ">True</RestoreSuccess>
+    <RestoreTool Condition=" '$(RestoreTool)' == '' ">NuGet</RestoreTool>
+    <ProjectAssetsFile Condition=" '$(ProjectAssetsFile)' == '' ">$(MSBuildThisFileDirectory)project.assets.json</ProjectAssetsFile>
+    <NuGetPackageRoot Condition=" '$(NuGetPackageRoot)' == '' ">$(UserProfile)\.nuget\packages\</NuGetPackageRoot>
+    <NuGetPackageFolders Condition=" '$(NuGetPackageFolders)' == '' ">C:\Users\noah.engeldal\.nuget\packages\</NuGetPackageFolders>
+    <NuGetProjectStyle Condition=" '$(NuGetProjectStyle)' == '' ">PackageReference</NuGetProjectStyle>
+    <NuGetToolVersion Condition=" '$(NuGetToolVersion)' == '' ">6.7.0</NuGetToolVersion>
+  </PropertyGroup>
+  <ItemGroup Condition=" '$(ExcludeRestorePackageImports)' != 'true' ">
+    <SourceRoot Include="C:\Users\noah.engeldal\.nuget\packages\" />
+  </ItemGroup>
+  <ImportGroup Condition=" '$(ExcludeRestorePackageImports)' != 'true' ">
+    <Import Project="$(NuGetPackageRoot)blazorsvgcharts\1.1.6\buildTransitive\BlazorSVGCharts.props" Condition="Exists('$(NuGetPackageRoot)blazorsvgcharts\1.1.6\buildTransitive\BlazorSVGCharts.props')" />
+    <Import Project="$(NuGetPackageRoot)blazorcolorpicker\2.3.0\buildTransitive\BlazorColorPicker.props" Condition="Exists('$(NuGetPackageRoot)blazorcolorpicker\2.3.0\buildTransitive\BlazorColorPicker.props')" />
+  </ImportGroup>
+  <PropertyGroup Condition=" '$(ExcludeRestorePackageImports)' != 'true' ">
+    <PkgReaLTaiizor-WinForm Condition=" '$(PkgReaLTaiizor-WinForm)' == '' ">C:\Users\noah.engeldal\.nuget\packages\realtaiizor-winform\3.8.2</PkgReaLTaiizor-WinForm>
+    <PkgIntersoft_Crosslight Condition=" '$(PkgIntersoft_Crosslight)' == '' ">C:\Users\noah.engeldal\.nuget\packages\intersoft.crosslight\6.0.5000.975</PkgIntersoft_Crosslight>
+    <PkgFontAwesome Condition=" '$(PkgFontAwesome)' == '' ">C:\Users\noah.engeldal\.nuget\packages\fontawesome\4.7.0</PkgFontAwesome>
+  </PropertyGroup>
+</Project>

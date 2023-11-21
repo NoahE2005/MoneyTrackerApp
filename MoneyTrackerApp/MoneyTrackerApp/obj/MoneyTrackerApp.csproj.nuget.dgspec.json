@@ -1,0 +1,104 @@
+{
+  "format": 1,
+  "restore": {
+    "E:\\Code\\Oefenen\\1\\MoneyTrackerApp\\MoneyTrackerApp\\MoneyTrackerApp.csproj": {}
+  },
+  "projects": {
+    "E:\\Code\\Oefenen\\1\\MoneyTrackerApp\\MoneyTrackerApp\\MoneyTrackerApp.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "E:\\Code\\Oefenen\\1\\MoneyTrackerApp\\MoneyTrackerApp\\MoneyTrackerApp.csproj",
+        "projectName": "MoneyTrackerApp",
+        "projectPath": "E:\\Code\\Oefenen\\1\\MoneyTrackerApp\\MoneyTrackerApp\\MoneyTrackerApp.csproj",
+        "packagesPath": "C:\\Users\\noah.engeldal\\.nuget\\packages\\",
+        "outputPath": "E:\\Code\\Oefenen\\1\\MoneyTrackerApp\\MoneyTrackerApp\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\noah.engeldal\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net6.0-windows"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net6.0-windows7.0": {
+            "targetAlias": "net6.0-windows",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net6.0-windows7.0": {
+          "targetAlias": "net6.0-windows",
+          "dependencies": {
+            "BlazorColorPicker": {
+              "target": "Package",
+              "version": "[2.3.0, )"
+            },
+            "BlazorSVGCharts": {
+              "target": "Package",
+              "version": "[1.1.6, )"
+            },
+            "Dirkster.ColorPickerLib": {
+              "target": "Package",
+              "version": "[1.6.2, )"
+            },
+            "FontAwesome": {
+              "target": "Package",
+              "version": "[4.7.0, )"
+            },
+            "Intersoft.Crosslight.UI.DataVisualization": {
+              "target": "Package",
+              "version": "[6.0.5000.975, )"
+            },
+            "Microsoft.Extensions.Configuration": {
+              "target": "Package",
+              "version": "[7.0.0, )"
+            },
+            "Microsoft.Extensions.Configuration.Json": {
+              "target": "Package",
+              "version": "[7.0.0, )"
+            },
+            "ReaLTaiizor-WinForm": {
+              "target": "Package",
+              "version": "[3.8.2, )"
+            },
+            "WinForms.DataVisualization": {
+              "target": "Package",
+              "version": "[1.8.0, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            },
+            "Microsoft.WindowsDesktop.App.WindowsForms": {
+              "privateAssets": "none"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.400\\RuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}

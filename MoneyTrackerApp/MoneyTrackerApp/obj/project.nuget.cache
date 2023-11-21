@@ -1,0 +1,63 @@
+{
+  "version": 2,
+  "dgSpecHash": "jDF9GmdRIi3rG+DV1/trUT6AKMXwTNltPxKrr5nAV8J/DMUJVCAE0bX6Y73S4fLUlhlwkBMaUFp/0xTmuOitHg==",
+  "success": true,
+  "projectFilePath": "E:\\Code\\Oefenen\\1\\MoneyTrackerApp\\MoneyTrackerApp\\MoneyTrackerApp.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\noah.engeldal\\.nuget\\packages\\blazorcolorpicker\\2.3.0\\blazorcolorpicker.2.3.0.nupkg.sha512",
+    "C:\\Users\\noah.engeldal\\.nuget\\packages\\blazorsvgcharts\\1.1.6\\blazorsvgcharts.1.1.6.nupkg.sha512",
+    "C:\\Users\\noah.engeldal\\.nuget\\packages\\dirkster.colorpickerlib\\1.6.2\\dirkster.colorpickerlib.1.6.2.nupkg.sha512",
+    "C:\\Users\\noah.engeldal\\.nuget\\packages\\dirkster.numericupdownlib\\2.4.2\\dirkster.numericupdownlib.2.4.2.nupkg.sha512",
+    "C:\\Users\\noah.engeldal\\.nuget\\packages\\fontawesome\\4.7.0\\fontawesome.4.7.0.nupkg.sha512",
+    "C:\\Users\\noah.engeldal\\.nuget\\packages\\intersoft.crosslight\\6.0.5000.975\\intersoft.crosslight.6.0.5000.975.nupkg.sha512",
+    "C:\\Users\\noah.engeldal\\.nuget\\packages\\intersoft.crosslight.ui.datavisualization\\6.0.5000.975\\intersoft.crosslight.ui.datavisualization.6.0.5000.975.nupkg.sha512",
+    "C:\\Users\\noah.engeldal\\.nuget\\packages\\microsoft.aspnetcore.authorization\\6.0.7\\microsoft.aspnetcore.authorization.6.0.7.nupkg.sha512",
+    "C:\\Users\\noah.engeldal\\.nuget\\packages\\microsoft.aspnetcore.components\\6.0.7\\microsoft.aspnetcore.components.6.0.7.nupkg.sha512",
+    "C:\\Users\\noah.engeldal\\.nuget\\packages\\microsoft.aspnetcore.components.analyzers\\6.0.7\\microsoft.aspnetcore.components.analyzers.6.0.7.nupkg.sha512",
+    "C:\\Users\\noah.engeldal\\.nuget\\packages\\microsoft.aspnetcore.components.forms\\6.0.7\\microsoft.aspnetcore.components.forms.6.0.7.nupkg.sha512",
+    "C:\\Users\\noah.engeldal\\.nuget\\packages\\microsoft.aspnetcore.components.web\\6.0.7\\microsoft.aspnetcore.components.web.6.0.7.nupkg.sha512",
+    "C:\\Users\\noah.engeldal\\.nuget\\packages\\microsoft.aspnetcore.metadata\\6.0.7\\microsoft.aspnetcore.metadata.6.0.7.nupkg.sha512",
+    "C:\\Users\\noah.engeldal\\.nuget\\packages\\microsoft.extensions.configuration\\7.0.0\\microsoft.extensions.configuration.7.0.0.nupkg.sha512",
+    "C:\\Users\\noah.engeldal\\.nuget\\packages\\microsoft.extensions.configuration.abstractions\\7.0.0\\microsoft.extensions.configuration.abstractions.7.0.0.nupkg.sha512",
+    "C:\\Users\\noah.engeldal\\.nuget\\packages\\microsoft.extensions.configuration.fileextensions\\7.0.0\\microsoft.extensions.configuration.fileextensions.7.0.0.nupkg.sha512",
+    "C:\\Users\\noah.engeldal\\.nuget\\packages\\microsoft.extensions.configuration.json\\7.0.0\\microsoft.extensions.configuration.json.7.0.0.nupkg.sha512",
+    "C:\\Users\\noah.engeldal\\.nuget\\packages\\microsoft.extensions.dependencyinjection\\6.0.0\\microsoft.extensions.dependencyinjection.6.0.0.nupkg.sha512",
+    "C:\\Users\\noah.engeldal\\.nuget\\packages\\microsoft.extensions.dependencyinjection.abstractions\\6.0.0\\microsoft.extensions.dependencyinjection.abstractions.6.0.0.nupkg.sha512",
+    "C:\\Users\\noah.engeldal\\.nuget\\packages\\microsoft.extensions.fileproviders.abstractions\\7.0.0\\microsoft.extensions.fileproviders.abstractions.7.0.0.nupkg.sha512",
+    "C:\\Users\\noah.engeldal\\.nuget\\packages\\microsoft.extensions.fileproviders.physical\\7.0.0\\microsoft.extensions.fileproviders.physical.7.0.0.nupkg.sha512",
+    "C:\\Users\\noah.engeldal\\.nuget\\packages\\microsoft.extensions.filesystemglobbing\\7.0.0\\microsoft.extensions.filesystemglobbing.7.0.0.nupkg.sha512",
+    "C:\\Users\\noah.engeldal\\.nuget\\packages\\microsoft.extensions.logging.abstractions\\6.0.1\\microsoft.extensions.logging.abstractions.6.0.1.nupkg.sha512",
+    "C:\\Users\\noah.engeldal\\.nuget\\packages\\microsoft.extensions.options\\6.0.0\\microsoft.extensions.options.6.0.0.nupkg.sha512",
+    "C:\\Users\\noah.engeldal\\.nuget\\packages\\microsoft.extensions.primitives\\7.0.0\\microsoft.extensions.primitives.7.0.0.nupkg.sha512",
+    "C:\\Users\\noah.engeldal\\.nuget\\packages\\microsoft.jsinterop\\6.0.7\\microsoft.jsinterop.6.0.7.nupkg.sha512",
+    "C:\\Users\\noah.engeldal\\.nuget\\packages\\realtaiizor\\3.7.9.5\\realtaiizor.3.7.9.5.nupkg.sha512",
+    "C:\\Users\\noah.engeldal\\.nuget\\packages\\realtaiizor-winform\\3.8.2\\realtaiizor-winform.3.8.2.nupkg.sha512",
+    "C:\\Users\\noah.engeldal\\.nuget\\packages\\system.io.pipelines\\6.0.3\\system.io.pipelines.6.0.3.nupkg.sha512",
+    "C:\\Users\\noah.engeldal\\.nuget\\packages\\system.runtime.compilerservices.unsafe\\6.0.0\\system.runtime.compilerservices.unsafe.6.0.0.nupkg.sha512",
+    "C:\\Users\\noah.engeldal\\.nuget\\packages\\system.text.encodings.web\\7.0.0\\system.text.encodings.web.7.0.0.nupkg.sha512",
+    "C:\\Users\\noah.engeldal\\.nuget\\packages\\system.text.json\\7.0.0\\system.text.json.7.0.0.nupkg.sha512",
+    "C:\\Users\\noah.engeldal\\.nuget\\packages\\winforms.datavisualization\\1.8.0\\winforms.datavisualization.1.8.0.nupkg.sha512"
+  ],
+  "logs": [
+    {
+      "code": "NU1701",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Package 'Intersoft.Crosslight 6.0.5000.975' was restored using '.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8, .NETFramework,Version=v4.8.1' instead of the project target framework 'net6.0-windows7.0'. This package may not be fully compatible with your project.",
+      "libraryId": "Intersoft.Crosslight",
+      "targetGraphs": [
+        "net6.0-windows7.0"
+      ]
+    },
+    {
+      "code": "NU1701",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Package 'Intersoft.Crosslight.UI.DataVisualization 6.0.5000.975' was restored using '.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8, .NETFramework,Version=v4.8.1' instead of the project target framework 'net6.0-windows7.0'. This package may not be fully compatible with your project.",
+      "libraryId": "Intersoft.Crosslight.UI.DataVisualization",
+      "targetGraphs": [
+        "net6.0-windows7.0"
+      ]
+    }
+  ]
+}
