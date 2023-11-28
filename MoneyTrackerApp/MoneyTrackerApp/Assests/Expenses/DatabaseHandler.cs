@@ -243,7 +243,9 @@ namespace MoneyTrackerApp.Assests.Expenses
 
         using (SQLiteCommand command = new SQLiteCommand(connection))
         {
-          command.CommandText = "SELECT CAST(strftime('%Y', Date) AS INTEGER) AS Year, SUM(Value) AS Expense, COUNT(*) AS MonthCount " +
+          command.CommandText = "SELECT CAST(strftime('%Y', Date) AS INTEGER) AS Year, " +
+                                "SUM(Value) AS TotalExpense, " +
+                                "COUNT(strftime('%M', Date)) AS MonthCount " +
                                 "FROM Expenses " +
                                 "GROUP BY Year " +
                                 "ORDER BY Year";
@@ -256,10 +258,10 @@ namespace MoneyTrackerApp.Assests.Expenses
               object yearObject = reader["Year"];
               int year = yearObject != DBNull.Value ? Convert.ToInt32(yearObject) : 0;
 
-              float expense = Convert.ToSingle(reader["Expense"]);
+              float totalExpense = Convert.ToSingle(reader["TotalExpense"]);
               int monthCount = Convert.ToInt32(reader["MonthCount"]);
 
-              yearlyExpenses[year] = Tuple.Create(expense, monthCount);
+              yearlyExpenses[year] = Tuple.Create(totalExpense, monthCount);
             }
 
             return yearlyExpenses;
@@ -267,7 +269,6 @@ namespace MoneyTrackerApp.Assests.Expenses
         }
       }
     }
-
 
     public static string CalculateCurrency(double AmountInEuro, string Currency)
     {
