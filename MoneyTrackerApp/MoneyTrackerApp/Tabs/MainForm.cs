@@ -64,13 +64,13 @@ namespace MoneyTrackerApp.Tabs
               if (sign == '+')
               {
                 totalMoney += value;
-                string convertedLine = $"+{TextFileHandler.CalculateCurrency(value, currencyCode)} {description}";
+                string convertedLine = $"+{DatabaseHandler.CalculateCurrency(value, currencyCode)} {description}";
                 AddDataToListView(PlusTable, convertedLine);
               }
               else if (sign == '-')
               {
                 totalMoney -= value;
-                string convertedLine = $"-{TextFileHandler.CalculateCurrency(value, currencyCode)} {description}";
+                string convertedLine = $"-{DatabaseHandler.CalculateCurrency(value, currencyCode)} {description}";
                 AddDataToListView(MinusTable, convertedLine);
               }
             }
@@ -79,7 +79,7 @@ namespace MoneyTrackerApp.Tabs
       }
 
       double total = (double)totalMoney; // Ensure total is a double
-      string convertedAmount = TextFileHandler.CalculateCurrency(total, currencyCode);
+      string convertedAmount = DatabaseHandler.CalculateCurrency(total, currencyCode);
       SumText.Text = $"Total: {convertedAmount}";
       #endregion
 

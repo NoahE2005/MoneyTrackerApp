@@ -243,7 +243,7 @@ namespace MoneyTrackerApp.Assests.Expenses
 
         using (SQLiteCommand command = new SQLiteCommand(connection))
         {
-          command.CommandText = "SELECT strftime('%Y', Date) AS Year, SUM(Value) AS Expense " +
+          command.CommandText = "SELECT CAST(strftime('%Y', Date) AS INTEGER) AS Year, SUM(Value) AS Expense " +
                                 "FROM Expenses " +
                                 "GROUP BY Year " +
                                 "ORDER BY Year";
@@ -253,7 +253,9 @@ namespace MoneyTrackerApp.Assests.Expenses
             Dictionary<int, float> yearlyExpenses = new Dictionary<int, float>();
             while (reader.Read())
             {
-              int year = Convert.ToInt32(reader["Year"]);
+              object yearObject = reader["Year"];
+              int year = yearObject != DBNull.Value ? Convert.ToInt32(yearObject) : 0;
+
               float expense = Convert.ToSingle(reader["Expense"]);
               yearlyExpenses[year] = expense;
             }
@@ -263,7 +265,6 @@ namespace MoneyTrackerApp.Assests.Expenses
         }
       }
     }
-
 
     public static string CalculateCurrency(double AmountInEuro, string Currency)
     {
