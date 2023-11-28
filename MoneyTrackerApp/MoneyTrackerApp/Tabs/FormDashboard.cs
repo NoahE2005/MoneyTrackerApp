@@ -32,124 +32,60 @@ namespace MoneyTrackerApp.Tabs
 
     }
 
-    static void FillChartline(bool UseMonth, Chart LineChart)
+    static void FillChartline(bool useMonth, Chart lineChart)
     {
-      if (UseMonth)
+      // Assuming there's a method to initialize the database; you can call DatabaseHandler.InitializeDatabase()
+      DatabaseHandler.InitializeDatabase();
+
+      if (useMonth)
       {
-        DirectoryInfo[] Folders = TextFileHandler.GetAllTextFileFolder();
-
-        int Index = 0;
-        foreach (DirectoryInfo Folder in Folders)
-        {
-          if (!Folder.Name.EndsWith(DateTime.Now.ToString("yyyy")))
-          {
-            Folders = TextFileHandler.RemoveIndices(Folders, Index);
-          }
-          Index++;
-        }
-
         List<string> lineChartX = new List<string>();
         List<double> lineChartY = new List<double>();
-        int monthIndex = 1;
 
-        foreach (DirectoryInfo Folder in Folders)
+        List<ExpenseData> monthlyExpenses = DatabaseHandler.GetAllMonthlyExpenses();
+
+        foreach (ExpenseData expenseData in monthlyExpenses)
         {
-          double expense = TextFileHandler.ProcessExpenseFile(Folder);
-          lineChartY.Add(expense);
-
-          string[] folderNameParts = Folder.Name.Split('-');
-          if (folderNameParts.Length >= 2)
-          {
-            int monthNumber = int.Parse(folderNameParts[0].Trim());
-
-            DateTimeFormatInfo dateFormatInfo = DateTimeFormatInfo.CurrentInfo;
-            string MonthName = dateFormatInfo.GetMonthName(monthNumber);
-            TextInfo textInfo = CultureInfo.CurrentCulture.TextInfo;
-
-            lineChartX.Add(textInfo.ToTitleCase(MonthName));
-          }
-          else
-          {
-            // Handle the case where the folder name doesn't contain a valid month
-            lineChartX.Add("Unknown");
-          }
-
-          // Increment the month index
-          monthIndex++;
+          lineChartX.Add(expenseData.MonthName);
+          lineChartY.Add(expenseData.Expense);
         }
 
-        LineChart.Series["Money"].Points.DataBindXY(lineChartX, lineChartY);
+        lineChart.Series["Money"].Points.DataBindXY(lineChartX, lineChartY);
       }
       else
       {
-        DirectoryInfo[] Folders = TextFileHandler.GetAllTextFileFolder();
-        Dictionary<int, float> YearlyExpenses = new Dictionary<int, float>();
-
-        // Initialize the dictionary with all years found in folders
-        foreach (DirectoryInfo Folder in Folders)
-        {
-          string[] FolderName = Folder.Name.Split('-');
-          if (int.TryParse(FolderName[1], out int folderYear))
-          {
-            YearlyExpenses[folderYear] = 0;
-          }
-        }
-
-        // Accumulate expenses for folders with the same year
-        foreach (DirectoryInfo Folder in Folders)
-        {
-          string[] FolderName = Folder.Name.Split('-');
-          if (int.TryParse(FolderName[1], out int folderYear))
-          {
-            float expense = TextFileHandler.ProcessExpenseFile(Folder);
-
-            // Instead of assigning the expense directly, accumulate it.
-            YearlyExpenses[folderYear] += expense;
-          }
-        }
-
-        // Prepare data for the line chart with all years
         List<int> lineChartX = new List<int>();
         List<float> lineChartY = new List<float>();
 
-        // Find the minimum and maximum years
-        int minYear = YearlyExpenses.Keys.Min();
-        int maxYear = YearlyExpenses.Keys.Max();
+        Dictionary<int, float> yearlyExpenses = DatabaseHandler.GetAllYearlyExpenses();
 
-        // Fill in the years within the range
-        for (int year = minYear; year <= maxYear; year++)
+        // Prepare data for the line chart with all years
+        foreach (var kvp in yearlyExpenses)
         {
-          lineChartX.Add(year);
-          if (YearlyExpenses.ContainsKey(year))
-          {
-            lineChartY.Add(YearlyExpenses[year]);
-          }
-          else
-          {
-            lineChartY.Add(0);
-          }
+          lineChartX.Add(kvp.Key);
+          lineChartY.Add(kvp.Value);
         }
 
-        LineChart.Series["Money"].Points.DataBindXY(lineChartX, lineChartY);
+        lineChart.Series["Money"].Points.DataBindXY(lineChartX, lineChartY);
       }
     }
 
     private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
     {
-      string? Value = this.MonthYearComboBox.SelectedItem?.ToString();
-      Chart Chart = this.chart1;
+      string? value = this.MonthYearComboBox.SelectedItem?.ToString();
+      Chart chart = this.chart1;
 
-      if (Value == "Months")
+      if (value == "Months")
       {
-        FillChartline(true, Chart);
+        FillChartline(true, chart);
       }
-      else if (Value == "Years")
+      else if (value == "Years")
       {
-        FillChartline(false, Chart);
+        FillChartline(false, chart);
       }
       else
       {
-        MessageBox.Show($"ERROR: Incorrect value; {Value}");
+        MessageBox.Show($"ERROR: Incorrect value; {value}");
       }
     }
 

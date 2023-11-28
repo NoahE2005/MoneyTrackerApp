@@ -284,7 +284,7 @@
       AddDataSubmitButton.Anchor = AnchorStyles.Top | AnchorStyles.Right;
       AddDataSubmitButton.Cursor = Cursors.Hand;
       AddDataSubmitButton.ForeColor = Color.White;
-      AddDataSubmitButton.Location = new Point(367, 126);
+      AddDataSubmitButton.Location = new Point(120, 126);
       AddDataSubmitButton.Name = "AddDataSubmitButton";
       AddDataSubmitButton.Size = new Size(142, 46);
       AddDataSubmitButton.TabIndex = 2;

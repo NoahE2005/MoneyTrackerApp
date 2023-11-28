@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SQLite;
 using System.Drawing;
 using System.Linq;
 using System.Runtime.CompilerServices;
@@ -33,40 +34,52 @@ namespace MoneyTrackerApp.Tabs
       PlusTable.Items.Clear();
       MinusTable.Items.Clear();
 
-      int TotaalMoney = 0;
-      string textFilePath = TextFileHandler.GetTextFilePath()[0];
-      var Currency = new Dictionary<string, string>(SettingsHandler.GetAllConfig());
-      string currencyCode = Currency["Currency"];
-      if (sr == null)
-      {
-        sr = new StreamReader(textFilePath);
-      }
-      string line;
+      int totalMoney = 0;
+      var currency = new Dictionary<string, string>(SettingsHandler.GetAllConfig());
+      string currencyCode = currency["Currency"];
 
-      while ((line = sr.ReadLine()) != null)
+      // Assume there's a method to initialize the database; you can call DatabaseHandler.InitializeDatabase()
+      DatabaseHandler.InitializeDatabase();
+
+      using (SQLiteConnection connection = new SQLiteConnection(DatabaseHandler.connectionString))
       {
-        if (line.StartsWith("+"))
+        connection.Open();
+
+        using (SQLiteCommand command = new SQLiteCommand(connection))
         {
-          String?[] Newline = line.Split(" ");
-          string number = Newline[1];
-          TotaalMoney += int.Parse(number);
-          string convertedLine = $"{Newline[0]}{TextFileHandler.CalculateCurrency(double.Parse(number), currencyCode)} {Newline[2]} {Newline[3]}";
-          AddDataToListView(PlusTable, convertedLine);
-        }
-        else
-        {
-          if (line.StartsWith('-'))
+          command.CommandText = "SELECT Sign, Value FROM Expenses WHERE Date = @Date";
+          command.Parameters.AddWithValue("@Date", DatabaseHandler.GetCurrentMonthYear());
+
+          using (SQLiteDataReader reader = command.ExecuteReader())
           {
-            String?[] Newline = line.Split(" ");
-            string number = Newline[1];
-            TotaalMoney -= int.Parse(number);
-            string convertedLine = $"{Newline[0]}{TextFileHandler.CalculateCurrency(double.Parse(number), currencyCode)} {Newline[2]} {Newline[3]}";
-            AddDataToListView(MinusTable, convertedLine);
+            while (reader.Read())
+            {
+              char sign = Convert.ToChar(reader["Sign"]);
+              int value = Convert.ToInt32(reader["Value"]);
+
+              string description = reader.IsDBNull(reader.GetOrdinal("Description"))
+                ? string.Empty
+                : reader["Description"].ToString();
+
+              if (sign == '+')
+              {
+                totalMoney += value;
+                string convertedLine = $"+{TextFileHandler.CalculateCurrency(value, currencyCode)} {description}";
+                AddDataToListView(PlusTable, convertedLine);
+              }
+              else if (sign == '-')
+              {
+                totalMoney -= value;
+                string convertedLine = $"-{TextFileHandler.CalculateCurrency(value, currencyCode)} {description}";
+                AddDataToListView(MinusTable, convertedLine);
+              }
+            }
           }
         }
       }
-      double Totaal = (double)TotaalMoney; // Ensure Totaal is a double
-      string convertedAmount = TextFileHandler.CalculateCurrency(Totaal, currencyCode);
+
+      double total = (double)totalMoney; // Ensure total is a double
+      string convertedAmount = TextFileHandler.CalculateCurrency(total, currencyCode);
       SumText.Text = $"Total: {convertedAmount}";
       #endregion
 
@@ -75,27 +88,24 @@ namespace MoneyTrackerApp.Tabs
       Label GoalLabel = frm.GoalLabel;
       System.Windows.Forms.Panel GoalPanel = frm.GoalPanel;
 
-      string GoalFilePath = TextFileHandler.GetTextFilePath()[1];
-      StreamReader GoalReader = new StreamReader(GoalFilePath);
-      string GoalLine = GoalReader.ReadLine();
+      int goal = DatabaseHandler.GetGoal();
 
-      if (GoalLine != null)
+      if (goal > 0)
       {
-        int Goal = int.Parse(GoalLine);
-        double ProcentGoal = (double)TotaalMoney / Goal * 100;
-        int Procent = (int)Math.Round(ProcentGoal);
-        GoalProgresbar.Value = Procent;
-        //GoalPanel.
+        double procentGoal = (double)total / goal * 100;
+        int procent = (int)Math.Round(procentGoal);
+        GoalProgresbar.Value = procent;
+        GoalLabel.Text = "This is how close you are to your goal";
       }
       else
       {
-        GoalLabel.Text = "Oops, you dont have a goal yet. Write one down";
+        GoalLabel.Text = "Oops, you don't have a goal yet. Write one down";
       }
 
       #endregion
 
-      sr.Close();
-      GoalReader.Close();
+
+      //sr.Close();
     }
 
     static void AddDataToListView(ListView Table, string line)
@@ -133,72 +143,24 @@ namespace MoneyTrackerApp.Tabs
       string DataAmount = Amount.Text;
       string DataText = Text.Text;
 
-      string textFilePath = TextFileHandler.GetTextFilePath()[0];
-      int retryCount = 3;
-      int retryDelayMs = 100;
+      // Assuming there's a method to initialize the database; you can call DatabaseHandler.InitializeDatabase()
+      DatabaseHandler.InitializeDatabase();
+      DatabaseHandler.InsertExpense(MinusPlusBox, int.Parse(DataAmount), DataText);
 
-      while (retryCount > 0)
-      {
-        try
-        {
-          using (StreamWriter w = File.AppendText(textFilePath))
-          {
-            string TextToWrite = $"{MinusPlusBox} {DataAmount} | {DataText}";
-            w.WriteLine();
-            w.Write(TextToWrite);
-            w.Close();
-          }
-
-          break;
-        }
-        catch (IOException ex)
-        {
-          retryCount--;
-          Thread.Sleep(retryDelayMs);
-          if (retryCount == 0)
-          {
-            MessageBox.Show($"Unable to access the file after multiple retries. Error: {ex.Message}");
-          }
-        }
-      }
       RefreshData(this);
 
       Amount.Text = "";
       Text.Text = "";
     }
 
+
+
     private void GoalSubmit_Click(object sender, EventArgs e)
     {
       TextBox GoalAmount = this.GoalAmount;
       string Amount = GoalAmount.Text;
 
-      string textFilePath = TextFileHandler.GetTextFilePath()[1];
-      int retryCount = 3;
-      int retryDelayMs = 100;
-
-      while (retryCount > 0)
-      {
-        try
-        {
-          using (StreamWriter w = new StreamWriter(textFilePath, false))
-          {
-            string TextToWrite = Amount;
-            w.WriteLine(TextToWrite);
-            w.Close();
-          }
-
-          break;
-        }
-        catch (IOException ex)
-        {
-          retryCount--;
-          Thread.Sleep(retryDelayMs);
-          if (retryCount == 0)
-          {
-            MessageBox.Show($"Unable to access the file after multiple retries. Error: {ex.Message}");
-          }
-        }
-      }
+      DatabaseHandler.SetGoal(int.Parse(Amount));
       RefreshData(this);
     }
 

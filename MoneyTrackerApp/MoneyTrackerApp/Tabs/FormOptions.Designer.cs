@@ -37,7 +37,7 @@
       label1 = new Label();
       StartMinimizedCheckbox = new CheckBox();
       CurrencycomboBox = new ComboBox();
-      button1 = new Button();
+      ClearMoneyBtn = new Button();
       panel1.SuspendLayout();
       tableLayoutPanel1.SuspendLayout();
       SuspendLayout();
@@ -66,7 +66,7 @@
       tableLayoutPanel1.Controls.Add(label1, 0, 0);
       tableLayoutPanel1.Controls.Add(StartMinimizedCheckbox, 1, 1);
       tableLayoutPanel1.Controls.Add(CurrencycomboBox, 1, 0);
-      tableLayoutPanel1.Controls.Add(button1, 1, 3);
+      tableLayoutPanel1.Controls.Add(ClearMoneyBtn, 1, 3);
       tableLayoutPanel1.Location = new Point(12, 12);
       tableLayoutPanel1.Name = "tableLayoutPanel1";
       tableLayoutPanel1.RowCount = 6;
@@ -167,17 +167,17 @@
       CurrencycomboBox.TabIndex = 3;
       CurrencycomboBox.SelectedIndexChanged += CurrencycomboBox1_SelectedIndexChanged;
       // 
-      // button1
+      // ClearMoneyBtn
       // 
-      button1.Dock = DockStyle.Fill;
-      button1.Location = new Point(596, 221);
-      button1.Margin = new Padding(14);
-      button1.Name = "button1";
-      button1.Size = new Size(166, 41);
-      button1.TabIndex = 7;
-      button1.Text = "button1";
-      button1.UseVisualStyleBackColor = true;
-      button1.Click += button1_Click;
+      ClearMoneyBtn.Dock = DockStyle.Fill;
+      ClearMoneyBtn.Location = new Point(596, 221);
+      ClearMoneyBtn.Margin = new Padding(14);
+      ClearMoneyBtn.Name = "ClearMoneyBtn";
+      ClearMoneyBtn.Size = new Size(166, 41);
+      ClearMoneyBtn.TabIndex = 7;
+      ClearMoneyBtn.Text = "Clear";
+      ClearMoneyBtn.UseVisualStyleBackColor = true;
+      ClearMoneyBtn.Click += ClearMoneyBtn_Click;
       // 
       // FormOptions
       // 
@@ -206,6 +206,6 @@
     private Label label3;
     private ComboBox comboBox1;
     private Label label4;
-    private Button button1;
+    private Button ClearMoneyBtn;
   }
 }

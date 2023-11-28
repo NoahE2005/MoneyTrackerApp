@@ -63,14 +63,13 @@ namespace MoneyTrackerApp.Tabs
       MessageBox.Show("Please restart the application to apply the changes", "Currency Changed", MessageBoxButtons.OK);
     }
 
-    private void button1_Click(object sender, EventArgs e)
+    private void ClearMoneyBtn_Click(object sender, EventArgs e)
     {
-      string[] path = TextFileHandler.GetTextFilePath();
-      using (StreamWriter tw = new StreamWriter(path[0]))
-      {
-        File.WriteAllText(path[0], "");
-        tw.Close();
-      }
+      // Assuming there's a method to initialize the database; you can call DatabaseHandler.InitializeDatabase()
+      DatabaseHandler.InitializeDatabase();
+
+      // Clear the database
+      DatabaseHandler.ClearDatabase();
     }
   }
 }
