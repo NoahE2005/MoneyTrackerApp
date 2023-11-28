@@ -53,49 +53,31 @@ namespace MoneyTrackerApp.Tabs
 
       if (selectedYear != null)
       {
-        DirectoryInfo[] diArr = TextFileHandler.GetAllTextFileFolder();
-
-        int TotaalPlus = 0;
-        int TotaalMinus = 0;
-        int ExpenseFileCount = 0;
-
         try
         {
-          foreach (DirectoryInfo Testdi in diArr)
+          Dictionary<int, Tuple<float, int>> yearlyExpenses = DatabaseHandler.GetAllYearlyExpensesWithMonthCount();
+
+          int TotaalPlus = 0;
+          int TotaalMinus = 0;
+          int ExpenseFileCount = 0;
+
+          foreach (var yearExpense in yearlyExpenses)
           {
-            if (Testdi.Name.EndsWith(selectedYear))
+            int year = yearExpense.Key;
+            float expense = yearExpense.Value.Item1; // Item1 is the total expense
+
+            if (year == int.Parse(selectedYear))
             {
-              FileInfo[] txtFiles = Testdi.GetFiles("Exspense.txt");
-              foreach (FileInfo txtFile in txtFiles)
+              if (expense > 0)
               {
-                using (StreamReader sr = txtFile.OpenText())
-                {
-                  string line;
-                  while ((line = sr.ReadLine()) != null)
-                  {
-                    if (line.Length >= 5)
-                    {
-                      char sign = line[0];
-                      if (sign == '+' || sign == '-')
-                      {
-                        int value;
-                        if (int.TryParse(line.Split(' ')[1], out value))
-                        {
-                          if (sign == '+')
-                          {
-                            TotaalPlus += value;
-                          }
-                          else if (sign == '-')
-                          {
-                            TotaalMinus += value;
-                          }
-                        }
-                      }
-                    }
-                  }
-                }
-                ExpenseFileCount++;
+                TotaalPlus += (int)expense;
               }
+              else
+              {
+                TotaalMinus -= (int)Math.Abs(expense);
+              }
+
+              ExpenseFileCount += yearExpense.Value.Item2; // Item2 is the count of months
             }
           }
 
@@ -115,7 +97,7 @@ namespace MoneyTrackerApp.Tabs
           SummaryLabel.Text = prompt;
           //MessageBox.Show(prompt);
 
-          //Ai generate text using prompt
+          // Ai generate text using prompt
         }
         catch (Exception ex)
         {
@@ -125,6 +107,8 @@ namespace MoneyTrackerApp.Tabs
       }
       #endregion
     }
+
+
 
   }
 }

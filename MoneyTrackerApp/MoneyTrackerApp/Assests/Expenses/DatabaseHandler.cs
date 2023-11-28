@@ -235,7 +235,7 @@ namespace MoneyTrackerApp.Assests.Expenses
       }
     }
 
-    public static Dictionary<int, float> GetAllYearlyExpenses()
+    public static Dictionary<int, Tuple<float, int>> GetAllYearlyExpensesWithMonthCount()
     {
       using (SQLiteConnection connection = new SQLiteConnection(connectionString))
       {
@@ -243,21 +243,23 @@ namespace MoneyTrackerApp.Assests.Expenses
 
         using (SQLiteCommand command = new SQLiteCommand(connection))
         {
-          command.CommandText = "SELECT CAST(strftime('%Y', Date) AS INTEGER) AS Year, SUM(Value) AS Expense " +
+          command.CommandText = "SELECT CAST(strftime('%Y', Date) AS INTEGER) AS Year, SUM(Value) AS Expense, COUNT(*) AS MonthCount " +
                                 "FROM Expenses " +
                                 "GROUP BY Year " +
                                 "ORDER BY Year";
 
           using (SQLiteDataReader reader = command.ExecuteReader())
           {
-            Dictionary<int, float> yearlyExpenses = new Dictionary<int, float>();
+            Dictionary<int, Tuple<float, int>> yearlyExpenses = new Dictionary<int, Tuple<float, int>>();
             while (reader.Read())
             {
               object yearObject = reader["Year"];
               int year = yearObject != DBNull.Value ? Convert.ToInt32(yearObject) : 0;
 
               float expense = Convert.ToSingle(reader["Expense"]);
-              yearlyExpenses[year] = expense;
+              int monthCount = Convert.ToInt32(reader["MonthCount"]);
+
+              yearlyExpenses[year] = Tuple.Create(expense, monthCount);
             }
 
             return yearlyExpenses;
@@ -265,6 +267,7 @@ namespace MoneyTrackerApp.Assests.Expenses
         }
       }
     }
+
 
     public static string CalculateCurrency(double AmountInEuro, string Currency)
     {

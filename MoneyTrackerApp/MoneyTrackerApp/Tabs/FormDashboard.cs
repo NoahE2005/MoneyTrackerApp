@@ -57,13 +57,13 @@ namespace MoneyTrackerApp.Tabs
         List<int> lineChartX = new List<int>();
         List<float> lineChartY = new List<float>();
 
-        Dictionary<int, float> yearlyExpenses = DatabaseHandler.GetAllYearlyExpenses();
+        Dictionary<int, Tuple<float, int>> yearlyExpenses = DatabaseHandler.GetAllYearlyExpensesWithMonthCount();
 
         // Prepare data for the line chart with all years
         foreach (var kvp in yearlyExpenses)
         {
           lineChartX.Add(kvp.Key);
-          lineChartY.Add(kvp.Value);
+          lineChartY.Add(kvp.Value.Item1); // Item1 is the total expense
         }
 
         lineChart.Series["Money"].Points.DataBindXY(lineChartX, lineChartY);
