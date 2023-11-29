@@ -214,7 +214,7 @@ namespace MoneyTrackerApp.Assests.Expenses
 
         using (SQLiteCommand command = new SQLiteCommand(connection))
         {
-          command.CommandText = "SELECT strftime('%Y-%m', Date) AS MonthYear, SUM(Value) AS Expense " +
+          command.CommandText = "SELECT Date AS MonthYear, SUM(Value) AS Expense " +
                                 "FROM Expenses " +
                                 "GROUP BY MonthYear " +
                                 "ORDER BY MonthYear";
@@ -226,6 +226,7 @@ namespace MoneyTrackerApp.Assests.Expenses
             {
               string monthYear = reader["MonthYear"].ToString();
               double expense = Convert.ToDouble(reader["Expense"]);
+
               monthlyExpenses.Add(new ExpenseData(monthYear, expense));
             }
 
@@ -243,9 +244,9 @@ namespace MoneyTrackerApp.Assests.Expenses
 
         using (SQLiteCommand command = new SQLiteCommand(connection))
         {
-          command.CommandText = "SELECT CAST(strftime('%Y', Date) AS INTEGER) AS Year, " +
+          command.CommandText = "SELECT Date AS Year, " +
                                 "SUM(Value) AS TotalExpense, " +
-                                "COUNT(strftime('%M', Date)) AS MonthCount " +
+                                "COUNT(DISTINCT SUBSTR(Date, 6, 2)) AS MonthCount " +
                                 "FROM Expenses " +
                                 "GROUP BY Year " +
                                 "ORDER BY Year";
@@ -256,7 +257,8 @@ namespace MoneyTrackerApp.Assests.Expenses
             while (reader.Read())
             {
               object yearObject = reader["Year"];
-              int year = yearObject != DBNull.Value ? Convert.ToInt32(yearObject) : 0;
+              object[] SplitYears = yearObject.ToString().Split("-");
+              int year = yearObject != DBNull.Value ? Convert.ToInt32(SplitYears[1]) : 0;
 
               float totalExpense = Convert.ToSingle(reader["TotalExpense"]);
               int monthCount = Convert.ToInt32(reader["MonthCount"]);

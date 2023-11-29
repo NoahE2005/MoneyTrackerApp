@@ -47,7 +47,7 @@ namespace MoneyTrackerApp.Tabs
 
         using (SQLiteCommand command = new SQLiteCommand(connection))
         {
-          command.CommandText = "SELECT Sign, Value FROM Expenses WHERE Date = @Date";
+          command.CommandText = "SELECT Sign, Value, Description FROM Expenses WHERE Date = @Date";
           command.Parameters.AddWithValue("@Date", DatabaseHandler.GetCurrentMonthYear());
 
           using (SQLiteDataReader reader = command.ExecuteReader())
