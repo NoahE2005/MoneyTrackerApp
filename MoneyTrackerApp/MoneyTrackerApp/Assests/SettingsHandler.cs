@@ -27,19 +27,25 @@ namespace MoneyTrackerApp.Assests
       // Retrieve settings from the configuration file and store them in the dictionary
       AllSettings["Currency"] = config["Currency"];
       AllSettings["StartMinimized"] = config["StartMinimized"];
+      AllSettings["Language"] = config["Language"];
 
       return AllSettings;
     }
 
-    public static void SetConfig(string key, string value)
+    public static bool SetConfig(string key, string value)
     {
-      // Create a dictionary to hold the existing settings
       var existingSettings = new Dictionary<string, string>(GetAllConfig());
 
-      // Modify the desired key-value pair
+      if (existingSettings.ContainsKey(key))
+      {
+        if (existingSettings[key] == value)
+        {
+          return false;
+        }
+      }
+
       existingSettings[key] = value;
 
-      // Write the updated configuration back to the JSON file
       var configBuilder = new ConfigurationBuilder();
       configBuilder.AddInMemoryCollection(existingSettings);
       var newConfig = configBuilder.Build();
@@ -49,7 +55,6 @@ namespace MoneyTrackerApp.Assests
       string AssestsFolder = Path.Combine(GetProjectDirectory(), "Assests/");
       string jsonFilePath = Path.Combine(AssestsFolder, jsonFileName);
 
-      // Write the updated configuration back to the JSON file
       using (var streamWriter = new StreamWriter(jsonFilePath))
       {
         streamWriter.WriteLine("{");
@@ -66,9 +71,12 @@ namespace MoneyTrackerApp.Assests
         streamWriter.WriteLine("}");
         streamWriter.Close();
       }
+
+      return true;
     }
 
-    static private string GetProjectDirectory()
+
+    static public string GetProjectDirectory()
     {
       string currentDirectory = AppDomain.CurrentDomain.BaseDirectory;
       string projectDirectory = Directory.GetParent(currentDirectory)?.FullName;
@@ -77,6 +85,13 @@ namespace MoneyTrackerApp.Assests
       string projectDirectory4 = Directory.GetParent(projectDirectory3)?.FullName;
 
       return projectDirectory4;
+    }
+
+    static public string GetLanguage()
+    {
+      Dictionary<string, string> AllSettings = GetAllConfig();
+      string language = AllSettings["Language"];
+      return language;
     }
 
   }

@@ -45,7 +45,7 @@
       GoalProgressBar1 = new ReaLTaiizor.Controls.CircleProgressBar();
       panel3 = new Panel();
       AddDataSubmitButton = new Button();
-      label1 = new Label();
+      TypeNewLabel = new Label();
       tableLayoutPanel1 = new TableLayoutPanel();
       AddDataText = new TextBox();
       PlusMinusComboBox = new ComboBox();
@@ -212,7 +212,7 @@
       GoalPanel.Controls.Add(GoalAmount);
       GoalPanel.Location = new Point(71, 43);
       GoalPanel.Name = "GoalPanel";
-      GoalPanel.Size = new Size(200, 35);
+      GoalPanel.Size = new Size(211, 35);
       GoalPanel.TabIndex = 2;
       // 
       // GoalSubmit
@@ -220,7 +220,7 @@
       GoalSubmit.Font = new Font("Franklin Gothic Demi Cond", 10F, FontStyle.Regular, GraphicsUnit.Point);
       GoalSubmit.Location = new Point(137, 3);
       GoalSubmit.Name = "GoalSubmit";
-      GoalSubmit.Size = new Size(60, 23);
+      GoalSubmit.Size = new Size(74, 23);
       GoalSubmit.TabIndex = 1;
       GoalSubmit.Text = "Submit";
       GoalSubmit.UseVisualStyleBackColor = true;
@@ -272,7 +272,7 @@
       panel3.AutoSize = true;
       panel3.BackColor = Color.FromArgb(34, 34, 34);
       panel3.Controls.Add(AddDataSubmitButton);
-      panel3.Controls.Add(label1);
+      panel3.Controls.Add(TypeNewLabel);
       panel3.Controls.Add(tableLayoutPanel1);
       panel3.Dock = DockStyle.Fill;
       panel3.Location = new Point(10, 10);
@@ -293,17 +293,17 @@
       AddDataSubmitButton.UseVisualStyleBackColor = true;
       AddDataSubmitButton.Click += AddDataSubmitButton_Click;
       // 
-      // label1
+      // TypeNewLabel
       // 
-      label1.AutoSize = true;
-      label1.Font = new Font("Franklin Gothic Demi Cond", 20F, FontStyle.Bold, GraphicsUnit.Point);
-      label1.ForeColor = Color.White;
-      label1.Location = new Point(92, 38);
-      label1.Name = "label1";
-      label1.Size = new Size(170, 34);
-      label1.TabIndex = 3;
-      label1.Text = "Type new here";
-      label1.TextAlign = ContentAlignment.MiddleCenter;
+      TypeNewLabel.AutoSize = true;
+      TypeNewLabel.Font = new Font("Franklin Gothic Demi Cond", 20F, FontStyle.Bold, GraphicsUnit.Point);
+      TypeNewLabel.ForeColor = Color.White;
+      TypeNewLabel.Location = new Point(92, 38);
+      TypeNewLabel.Name = "TypeNewLabel";
+      TypeNewLabel.Size = new Size(170, 34);
+      TypeNewLabel.TabIndex = 3;
+      TypeNewLabel.Text = "Type new here";
+      TypeNewLabel.TextAlign = ContentAlignment.MiddleCenter;
       // 
       // tableLayoutPanel1
       // 
@@ -404,7 +404,7 @@
     private TextBox AddDataText;
     private TextBox AddDataAmount;
     private Button AddDataSubmitButton;
-    private Label label1;
+    private Label TypeNewLabel;
     private Label MoneySum;
     private Panel panel3;
     private Panel panel4;

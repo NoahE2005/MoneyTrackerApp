@@ -11,6 +11,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using MoneyTrackerApp.Assests;
 using MoneyTrackerApp.Assests.Expenses;
+using MoneyTrackerApp.Assests.Language;
 using ReaLTaiizor.Controls;
 using ReaLTaiizor.Util;
 
@@ -21,11 +22,27 @@ namespace MoneyTrackerApp.Tabs
     public MainForm()
     {
       InitializeComponent();
+      LoadLocalizedResources();
       RefreshData(this);
+    }
+
+    private static dynamic localizedResources;
+    private void LoadLocalizedResources()
+    {
+      ResourceHandler resourceHandler = new ResourceHandler();
+      localizedResources = resourceHandler.LoadResourceFile();
+
     }
 
     static void RefreshData(MainForm frm, StreamReader sr = null)
     {
+      #region Basic strings
+      frm.TypeNewLabel.Text = localizedResources.TypeNewHere;
+      frm.AddDataSubmitButton.Text = localizedResources.ButtonSubmit;
+      frm.GoalSubmit.Text = localizedResources.ButtonSubmit;
+
+      #endregion
+
       #region Money Tables
       ListView PlusTable = frm.listViewPlus;
       ListView MinusTable = frm.listViewMinus;
@@ -80,7 +97,7 @@ namespace MoneyTrackerApp.Tabs
 
       double total = (double)totalMoney; // Ensure total is a double
       string convertedAmount = DatabaseHandler.CalculateCurrency(total, currencyCode);
-      SumText.Text = $"Total: {convertedAmount}";
+      SumText.Text = $"{localizedResources.Total}: {convertedAmount}";
       #endregion
 
       #region Goal ProgressBar
@@ -95,11 +112,11 @@ namespace MoneyTrackerApp.Tabs
         double procentGoal = (double)total / goal * 100;
         int procent = (int)Math.Round(procentGoal);
         GoalProgresbar.Value = procent;
-        GoalLabel.Text = "This is how close you are to your goal";
+        GoalLabel.Text = localizedResources.GoalCloseText;
       }
       else
       {
-        GoalLabel.Text = "Oops, you don't have a goal yet. Write one down";
+        GoalLabel.Text = localizedResources.NoGoalText;
       }
 
       #endregion

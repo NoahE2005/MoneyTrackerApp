@@ -1,5 +1,6 @@
 ﻿using MoneyTrackerApp.Assests;
 using MoneyTrackerApp.Assests.Expenses;
+using MoneyTrackerApp.Assests.Language;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -18,6 +19,15 @@ namespace MoneyTrackerApp.Tabs
     public FormOptions()
     {
       InitializeComponent();
+      LoadLocalizedResources();
+      SetupOptions();
+    }
+
+    private static dynamic localizedResources;
+    private void LoadLocalizedResources()
+    {
+      ResourceHandler resourceHandler = new ResourceHandler();
+      localizedResources = resourceHandler.LoadResourceFile();
     }
 
     private void SetupOptions()
@@ -41,6 +51,20 @@ namespace MoneyTrackerApp.Tabs
         StartMinimizedCheckbox.Checked = false;
       }
       #endregion
+
+      #region Language input
+      ComboBox languageComboBox = this.comboBox1;
+      languageComboBox.SelectedValue = Settings.ContainsKey("Language") ? Settings["Language"] : "English";
+      #endregion
+
+      #region String Langauge
+      this.label1.Text = localizedResources.Currency; //Currency
+      this.label2.Text = localizedResources.StartMinimized; //Start minimized
+      this.label3.Text = localizedResources.ChooseLanguage; //Choose language
+      this.label4.Text = localizedResources.ClearMoney; //Clear money
+
+
+      #endregion
     }
 
     private void FormOptions_Load(object sender, EventArgs e)
@@ -59,13 +83,28 @@ namespace MoneyTrackerApp.Tabs
       ComboBox CurrencycomboBox1 = this.CurrencycomboBox;
       string? Value = CurrencycomboBox1.SelectedItem?.ToString();
 
-      SettingsHandler.SetConfig("Currency", Value);
-      MessageBox.Show("Please restart the application to apply the changes", "Currency Changed", MessageBoxButtons.OK);
+      bool result = SettingsHandler.SetConfig("Currency", Value);
+      if (result)
+      {
+        MessageBox.Show(localizedResources.SettingChanged, localizedResources.CurrencyChanged, MessageBoxButtons.OK);
+      }
+      else
+      {
+        MessageBox.Show(localizedResources.ChangeFailed, localizedResources.NoChange, MessageBoxButtons.OK);
+      }
     }
 
     private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
     {
-      SettingsHandler.SetConfig("Langauge", comboBox1.SelectedItem.ToString());
+      bool result = SettingsHandler.SetConfig("Language", comboBox1.SelectedItem.ToString());
+      if (result)
+      {
+        MessageBox.Show(localizedResources.SettingChanged, localizedResources.LanguageChanged, MessageBoxButtons.OK);
+      }
+      else
+      {
+        MessageBox.Show(localizedResources.ChangeFailed, localizedResources.NoChange, MessageBoxButtons.OK);
+      }
     }
 
     private void ClearMoneyBtn_Click(object sender, EventArgs e)
