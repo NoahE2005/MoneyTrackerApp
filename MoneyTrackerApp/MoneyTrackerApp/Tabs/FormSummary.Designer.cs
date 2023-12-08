@@ -63,8 +63,8 @@
       tableLayoutPanel1.Location = new Point(0, 0);
       tableLayoutPanel1.Name = "tableLayoutPanel1";
       tableLayoutPanel1.RowCount = 2;
-      tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 70F));
-      tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 30F));
+      tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 80F));
+      tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 20F));
       tableLayoutPanel1.Size = new Size(800, 450);
       tableLayoutPanel1.TabIndex = 3;
       // 
@@ -72,9 +72,9 @@
       // 
       panel3.Controls.Add(tableLayoutPanel2);
       panel3.Dock = DockStyle.Fill;
-      panel3.Location = new Point(3, 318);
+      panel3.Location = new Point(3, 363);
       panel3.Name = "panel3";
-      panel3.Size = new Size(794, 129);
+      panel3.Size = new Size(794, 84);
       panel3.TabIndex = 4;
       // 
       // tableLayoutPanel2
@@ -89,7 +89,7 @@
       tableLayoutPanel2.Name = "tableLayoutPanel2";
       tableLayoutPanel2.RowCount = 1;
       tableLayoutPanel2.RowStyles.Add(new RowStyle(SizeType.Percent, 50F));
-      tableLayoutPanel2.Size = new Size(794, 129);
+      tableLayoutPanel2.Size = new Size(794, 84);
       tableLayoutPanel2.TabIndex = 3;
       // 
       // YearComboBox
@@ -112,7 +112,7 @@
       label1.ForeColor = Color.White;
       label1.Location = new Point(294, 0);
       label1.Name = "label1";
-      label1.Size = new Size(100, 129);
+      label1.Size = new Size(100, 84);
       label1.TabIndex = 2;
       label1.Text = "Select year:";
       // 
@@ -124,14 +124,16 @@
       panel2.Location = new Point(10, 10);
       panel2.Margin = new Padding(10);
       panel2.Name = "panel2";
-      panel2.Size = new Size(780, 295);
+      panel2.Size = new Size(780, 340);
       panel2.TabIndex = 0;
       // 
       // SummaryLabel
       // 
+      SummaryLabel.AutoEllipsis = true;
       SummaryLabel.AutoSize = true;
       SummaryLabel.ForeColor = Color.White;
       SummaryLabel.Location = new Point(3, 9);
+      SummaryLabel.MaximumSize = new Size(760, 0);
       SummaryLabel.Name = "SummaryLabel";
       SummaryLabel.Size = new Size(0, 15);
       SummaryLabel.TabIndex = 0;

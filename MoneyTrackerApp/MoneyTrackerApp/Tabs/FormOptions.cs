@@ -63,6 +63,11 @@ namespace MoneyTrackerApp.Tabs
       MessageBox.Show("Please restart the application to apply the changes", "Currency Changed", MessageBoxButtons.OK);
     }
 
+    private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+    {
+      SettingsHandler.SetConfig("Langauge", comboBox1.SelectedItem.ToString());
+    }
+
     private void ClearMoneyBtn_Click(object sender, EventArgs e)
     {
       // Assuming there's a method to initialize the database; you can call DatabaseHandler.InitializeDatabase()

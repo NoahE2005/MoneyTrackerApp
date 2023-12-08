@@ -70,10 +70,10 @@
       listViewMinus.ForeColor = Color.FromArgb(192, 0, 0);
       listViewMinus.GridLines = true;
       listViewMinus.HeaderStyle = ColumnHeaderStyle.None;
-      listViewMinus.Location = new Point(215, 8);
+      listViewMinus.Location = new Point(206, 8);
       listViewMinus.Margin = new Padding(8);
       listViewMinus.Name = "listViewMinus";
-      listViewMinus.Size = new Size(192, 338);
+      listViewMinus.Size = new Size(183, 338);
       listViewMinus.TabIndex = 0;
       listViewMinus.UseCompatibleStateImageBehavior = false;
       listViewMinus.View = View.List;
@@ -90,20 +90,22 @@
       listViewPlus.Margin = new Padding(8);
       listViewPlus.MultiSelect = false;
       listViewPlus.Name = "listViewPlus";
-      listViewPlus.Size = new Size(191, 338);
+      listViewPlus.Size = new Size(182, 338);
       listViewPlus.TabIndex = 1;
       listViewPlus.UseCompatibleStateImageBehavior = false;
       listViewPlus.View = View.List;
       // 
       // panel1
       // 
+      panel1.AutoSize = true;
+      panel1.AutoSizeMode = AutoSizeMode.GrowAndShrink;
       panel1.BackColor = Color.FromArgb(44, 44, 44);
       panel1.Controls.Add(panel4);
-      panel1.Dock = DockStyle.Right;
-      panel1.Location = new Point(379, 0);
+      panel1.Dock = DockStyle.Fill;
+      panel1.Location = new Point(397, 0);
       panel1.Margin = new Padding(10);
       panel1.Name = "panel1";
-      panel1.Size = new Size(421, 450);
+      panel1.Size = new Size(403, 450);
       panel1.TabIndex = 2;
       // 
       // panel4
@@ -115,7 +117,7 @@
       panel4.Location = new Point(0, 0);
       panel4.Margin = new Padding(10);
       panel4.Name = "panel4";
-      panel4.Size = new Size(421, 450);
+      panel4.Size = new Size(403, 450);
       panel4.TabIndex = 3;
       // 
       // tableLayoutPanel3
@@ -131,7 +133,7 @@
       tableLayoutPanel3.RowCount = 2;
       tableLayoutPanel3.RowStyles.Add(new RowStyle(SizeType.Percent, 80F));
       tableLayoutPanel3.RowStyles.Add(new RowStyle(SizeType.Percent, 20F));
-      tableLayoutPanel3.Size = new Size(421, 450);
+      tableLayoutPanel3.Size = new Size(403, 450);
       tableLayoutPanel3.TabIndex = 3;
       // 
       // tableLayoutPanel4
@@ -146,7 +148,7 @@
       tableLayoutPanel4.Name = "tableLayoutPanel4";
       tableLayoutPanel4.RowCount = 1;
       tableLayoutPanel4.RowStyles.Add(new RowStyle(SizeType.Percent, 50F));
-      tableLayoutPanel4.Size = new Size(415, 354);
+      tableLayoutPanel4.Size = new Size(397, 354);
       tableLayoutPanel4.TabIndex = 4;
       // 
       // MoneySum
@@ -157,20 +159,20 @@
       MoneySum.ForeColor = Color.White;
       MoneySum.Location = new Point(3, 360);
       MoneySum.Name = "MoneySum";
-      MoneySum.Size = new Size(415, 25);
+      MoneySum.Size = new Size(397, 25);
       MoneySum.TabIndex = 2;
       MoneySum.Text = "Sum: ....";
       MoneySum.TextAlign = ContentAlignment.MiddleCenter;
       // 
       // panel2
       // 
-      panel2.AutoSize = true;
       panel2.BackColor = Color.FromArgb(44, 44, 44);
       panel2.Controls.Add(tableLayoutPanel2);
-      panel2.Dock = DockStyle.Fill;
+      panel2.Dock = DockStyle.Left;
       panel2.Location = new Point(0, 0);
+      panel2.MinimumSize = new Size(100, 0);
       panel2.Name = "panel2";
-      panel2.Size = new Size(379, 450);
+      panel2.Size = new Size(397, 450);
       panel2.TabIndex = 3;
       // 
       // tableLayoutPanel2
@@ -187,7 +189,7 @@
       tableLayoutPanel2.RowCount = 2;
       tableLayoutPanel2.RowStyles.Add(new RowStyle(SizeType.Percent, 50F));
       tableLayoutPanel2.RowStyles.Add(new RowStyle(SizeType.Percent, 50F));
-      tableLayoutPanel2.Size = new Size(379, 450);
+      tableLayoutPanel2.Size = new Size(397, 450);
       tableLayoutPanel2.TabIndex = 6;
       // 
       // panel5
@@ -201,7 +203,7 @@
       panel5.Location = new Point(10, 235);
       panel5.Margin = new Padding(10);
       panel5.Name = "panel5";
-      panel5.Size = new Size(359, 205);
+      panel5.Size = new Size(377, 205);
       panel5.TabIndex = 5;
       // 
       // GoalPanel
@@ -276,12 +278,11 @@
       panel3.Location = new Point(10, 10);
       panel3.Margin = new Padding(10);
       panel3.Name = "panel3";
-      panel3.Size = new Size(359, 205);
+      panel3.Size = new Size(377, 205);
       panel3.TabIndex = 4;
       // 
       // AddDataSubmitButton
       // 
-      AddDataSubmitButton.Anchor = AnchorStyles.Top | AnchorStyles.Right;
       AddDataSubmitButton.Cursor = Cursors.Hand;
       AddDataSubmitButton.ForeColor = Color.White;
       AddDataSubmitButton.Location = new Point(120, 126);
@@ -365,8 +366,8 @@
       AutoScaleMode = AutoScaleMode.Font;
       AutoSize = true;
       ClientSize = new Size(800, 450);
-      Controls.Add(panel2);
       Controls.Add(panel1);
+      Controls.Add(panel2);
       FormBorderStyle = FormBorderStyle.None;
       Name = "MainForm";
       Text = "MainForm";
