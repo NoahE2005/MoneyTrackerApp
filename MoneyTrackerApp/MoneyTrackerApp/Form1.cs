@@ -3,6 +3,7 @@ using System.Diagnostics.Eventing.Reader;
 using System.Runtime.InteropServices;
 using MoneyTrackerApp.Assests;
 using MoneyTrackerApp.Assests.Expenses;
+using MoneyTrackerApp.Assests.Language;
 
 namespace MoneyTrackerApp
 {
@@ -48,6 +49,8 @@ namespace MoneyTrackerApp
         Main.Activate();
       }
 
+      LoadLocalizedResources();
+
       #region SettingsInit
       var Settings = new Dictionary<string, string>(SettingsHandler.GetAllConfig());
 
@@ -57,7 +60,24 @@ namespace MoneyTrackerApp
       }
       #endregion
 
+      #region LanguageChange
+
+      button1.Text = localizedResources.BtnMain;
+      button2.Text = localizedResources.BtnDashboard;
+      button3.Text = localizedResources.BtnSummary;
+      button4.Text = localizedResources.BtnOptions;
+
+      #endregion
     }
+
+    private static dynamic localizedResources;
+    private void LoadLocalizedResources()
+    {
+      ResourceHandler resourceHandler = new ResourceHandler();
+      localizedResources = resourceHandler.LoadResourceFile();
+
+    }
+
     bool SidebarExpand = true;
 
     private void timer1_Tick(object sender, EventArgs e)

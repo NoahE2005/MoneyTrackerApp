@@ -61,6 +61,42 @@ namespace MoneyTrackerApp.Assests.Language {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Dashboard.
+        /// </summary>
+        internal static string BtnDashboard {
+            get {
+                return ResourceManager.GetString("BtnDashboard", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Hoofd.
+        /// </summary>
+        internal static string BtnMain {
+            get {
+                return ResourceManager.GetString("BtnMain", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Opties.
+        /// </summary>
+        internal static string BtnOptions {
+            get {
+                return ResourceManager.GetString("BtnOptions", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Samenvatting.
+        /// </summary>
+        internal static string BtnSummary {
+            get {
+                return ResourceManager.GetString("BtnSummary", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Opslaan.
         /// </summary>
         internal static string ButtonSubmit {
@@ -165,6 +201,31 @@ namespace MoneyTrackerApp.Assests.Language {
         internal static string StartMinimized {
             get {
                 return ResourceManager.GetString("StartMinimized", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Oh, wat een uitdagend jaar is het geweest! 😔
+        ///Terugkijkend op de afgelopen maanden is het duidelijk dat dit jaar zijn deel van financiële hindernissen heeft gepresenteerd. 💸 Ondanks de moeilijkheden is het cruciaal om deze ervaringen te erkennen en ervan te leren. Laten we in detail ingaan op de financiële reis gedurende {ExpenseFileCount} maanden, met totale uitgaven die zich opstapelen tot {TotaalSum}.
+        ///
+        ///Gedurende deze periode werd de reis gekenmerkt door onverwachte wendingen. Elke maand bracht zijn u [rest of string was truncated]&quot;;.
+        /// </summary>
+        internal static string SummaryBad {
+            get {
+                return ResourceManager.GetString("SummaryBad", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Wow, wat een ongelooflijk jaar is het geweest! 🎉
+        ///Ik ben opgetogen om te delen dat deze financiële reis ronduit fantastisch is geweest. 🚀
+        ///Gedurende het jaar hebben zorgvuldige tracking en slimme financiële beslissingen de weg geëffend voor een financiële toekomst vol licht. 💰
+        ///
+        ///In de loop van {ExpenseFileCount} maanden is de reis verhelderend geweest. Elke maand bracht zijn eigen set uitdagingen en overwinningen met zich mee, die uiteindelijk hebben bijgedragen aan het algehele financiële verhaal. De t [rest of string was truncated]&quot;;.
+        /// </summary>
+        internal static string SummaryGood {
+            get {
+                return ResourceManager.GetString("SummaryGood", resourceCulture);
             }
         }
         

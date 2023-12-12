@@ -117,6 +117,18 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="BtnDashboard" xml:space="preserve">
+    <value>Dashboard</value>
+  </data>
+  <data name="BtnMain" xml:space="preserve">
+    <value>Main</value>
+  </data>
+  <data name="BtnOptions" xml:space="preserve">
+    <value>Options</value>
+  </data>
+  <data name="BtnSummary" xml:space="preserve">
+    <value>Summary</value>
+  </data>
   <data name="ButtonSubmit" xml:space="preserve">
     <value>Submit</value>
   </data>
@@ -152,6 +164,12 @@
   </data>
   <data name="StartMinimized" xml:space="preserve">
     <value>Start minimized</value>
+  </data>
+  <data name="SummaryBad" xml:space="preserve">
+    <value>Oh, what a challenging year it has been! 😔\nReflecting on the past months, it's clear that this year presented its share of financial hurdles. 💸 Despite the difficulties, acknowledging and learning from these experiences is crucial. Let's delve into the details of the financial journey over the course of {ExpenseFileCount} months, with total expenses amounting to {TotaalSum}.\n\nThroughout this period, the journey was marked by unexpected twists and turns. Each month brought its unique set of financial challenges, testing resilience and adaptability. Despite the tough times, there's value in recognizing the effort put into managing expenses and navigating through uncertainties. 🔄\n\nThe Money Tracker app, a faithful companion in this financial journey, played a vital role in providing insights and helping make informed decisions. Even in challenging times, having a tool that highlights spending patterns and areas for improvement is crucial. 📉\n\nThe total expenses, while higher than desired, tell a story of survival and determination. This is not just about numbers; it's about the lessons learned, the decisions made, and the resilience shown in the face of adversity. 💪\n\nThe app's feature to categorize expenses proved especially useful during challenging times. It allowed for a closer look at where the money was going, helping identify areas for potential savings and optimizations. 💡\n\nFinancial difficulties often come with valuable insights. Perhaps there were months when unexpected expenses took a toll, but these experiences become stepping stones for future financial strategies. The ability to learn and adapt is a testament to financial maturity. 📚\n\nWhile the overall sentiment might not be celebratory, it's essential to acknowledge the progress made in managing expenses and making informed financial decisions. As we bid farewell to this challenging year, let's carry forward the lessons learned and approach the upcoming year with renewed determination. Here's to a more financially resilient future! 🌟💪</value>
+  </data>
+  <data name="SummaryGood" xml:space="preserve">
+    <value>Wow, what an incredible year it has been! 🎉\nI'm thrilled to share that this financial journey has been nothing short of fantastic. 🚀\nThroughout the year, diligent tracking and smart financial decisions have paved the way for a brighter financial future. 💰\n\nIn the span of {ExpenseFileCount} months, the journey has been enlightening. Each month brought its own set of challenges and triumphs, ultimately contributing to the overall financial narrative. The total expenses for the year, a sum of {TotaalSum}, tell a story of responsible spending and financial awareness. 📊\n\nAs we reflect on the past months, it's essential to acknowledge the effort put into tracking expenses meticulously. The Money Tracker app has proven to be an invaluable companion, providing insights that empower informed financial decisions. 📈\nFrom daily transactions to monthly budgets, the app has played a pivotal role in shaping a financially sound lifestyle.\n\nOne of the standout features of the app is its ability to break down expenses into categories, offering a detailed analysis of where the money is going. Whether it's entertainment, groceries, or utilities, having a comprehensive breakdown allows for a targeted approach to managing finances. 💡\n\nThe journey wasn't just about cutting expenses; it was also about identifying areas of opportunity and making strategic financial investments. Perhaps there were months with unexpected expenses, but those moments served as lessons in adaptability and resilience. 💪\n\nLooking at the bigger picture, the Money Tracker app has not only been a tool for expense tracking but also a source of motivation. Setting financial goals and seeing them gradually materialize is a testament to the power of intentional money management. 🎯\n\nIn the realm of personal finance, knowledge is indeed power. The app's ability to provide financial insights, trends, and forecasts has empowered better decision-making. It's not just about the past expenses but also about preparing for a more secure and prosperous financial future.\n\nAs we bid farewell to this remarkable year, it's worth appreciating the journey and the financial milestones achieved. The Money Tracker app has been a true ally in this pursuit of financial well-being. Here's to more financial success in the upcoming year! 🌟💸</value>
   </data>
   <data name="Total" xml:space="preserve">
     <value>Total</value>

@@ -117,6 +117,18 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="BtnDashboard" xml:space="preserve">
+    <value>Dashboard</value>
+  </data>
+  <data name="BtnMain" xml:space="preserve">
+    <value>Hoofd</value>
+  </data>
+  <data name="BtnOptions" xml:space="preserve">
+    <value>Opties</value>
+  </data>
+  <data name="BtnSummary" xml:space="preserve">
+    <value>Samenvatting</value>
+  </data>
   <data name="ButtonSubmit" xml:space="preserve">
     <value>Opslaan</value>
   </data>
@@ -152,6 +164,42 @@
   </data>
   <data name="StartMinimized" xml:space="preserve">
     <value>Start geminimaliseerd</value>
+  </data>
+  <data name="SummaryBad" xml:space="preserve">
+    <value>Oh, wat een uitdagend jaar is het geweest! 😔
+Terugkijkend op de afgelopen maanden is het duidelijk dat dit jaar zijn deel van financiële hindernissen heeft gepresenteerd. 💸 Ondanks de moeilijkheden is het cruciaal om deze ervaringen te erkennen en ervan te leren. Laten we in detail ingaan op de financiële reis gedurende {ExpenseFileCount} maanden, met totale uitgaven die zich opstapelen tot {TotaalSum}.
+
+Gedurende deze periode werd de reis gekenmerkt door onverwachte wendingen. Elke maand bracht zijn unieke reeks financiële uitdagingen met zich mee, waarbij veerkracht en aanpassingsvermogen werden getest. Ondanks de moeilijke tijden is er waarde in het erkennen van de inspanningen om uitgaven te beheren en te navigeren door onzekerheden. 🔄
+
+De Money Tracker-app, een trouwe metgezel in deze financiële reis, speelde een cruciale rol bij het verstrekken van inzichten en het nemen van geïnformeerde beslissingen. Zelfs in uitdagende tijden is het hebben van een tool die uitgavenpatronen benadrukt en gebieden voor verbetering aangeeft van vitaal belang. 📉
+
+De totale uitgaven, hoewel hoger dan gewenst, vertellen een verhaal van overleven en vastberadenheid. Dit gaat niet alleen over cijfers; het gaat over de lessen die zijn geleerd, de beslissingen die zijn genomen, en de veerkracht die is getoond in het gezicht van tegenspoed. 💪
+
+De mogelijkheid om uitgaven te categoriseren in de app bleek vooral nuttig tijdens uitdagende tijden. Het stelde in staat om nauwkeuriger te kijken naar waar het geld naartoe ging, waardoor gebieden voor mogelijke besparingen en optimalisaties konden worden geïdentificeerd. 💡
+
+Financiële moeilijkheden brengen vaak waardevolle inzichten met zich mee. Misschien waren er maanden waarin onverwachte uitgaven een tol eisten, maar deze ervaringen worden springplanken voor toekomstige financiële strategieën. Het vermogen om te leren en aan te passen is een getuigenis van financiële volwassenheid. 📚
+
+Hoewel de algehele sfeer misschien niet feestelijk is, is het essentieel om de vooruitgang in het beheer van uitgaven en het nemen van geïnformeerde financiële beslissingen te erkennen. Terwijl we afscheid nemen van dit uitdagende jaar, laten we de geleerde lessen meenemen en het komende jaar met hernieuwde vastberadenheid tegemoet treden. Op naar een financieel veerkrachtige toekomst! 🌟💪</value>
+  </data>
+  <data name="SummaryGood" xml:space="preserve">
+    <value>Wow, wat een ongelooflijk jaar is het geweest! 🎉
+Ik ben opgetogen om te delen dat deze financiële reis ronduit fantastisch is geweest. 🚀
+Gedurende het jaar hebben zorgvuldige tracking en slimme financiële beslissingen de weg geëffend voor een financiële toekomst vol licht. 💰
+
+In de loop van {ExpenseFileCount} maanden is de reis verhelderend geweest. Elke maand bracht zijn eigen set uitdagingen en overwinningen met zich mee, die uiteindelijk hebben bijgedragen aan het algehele financiële verhaal. De totale uitgaven voor het jaar, een som van {TotaalSum}, vertellen het verhaal van verantwoord uitgeven en financieel bewustzijn. 📊
+
+Terwijl we terugkijken op de afgelopen maanden, is het essentieel om de moeite te erkennen die is gestoken in het nauwgezet bijhouden van uitgaven. De Money Tracker-app heeft zich bewezen als een onschatbare metgezel, die inzichten biedt die informeerde financiële beslissingen mogelijk maken. 📈
+Van dagelijkse transacties tot maandelijkse budgetten heeft de app een cruciale rol gespeeld in het vormgeven van een financieel gezonde levensstijl.
+
+Een van de opvallende kenmerken van de app is het vermogen om uitgaven op te splitsen in categorieën, waardoor een gedetailleerde analyse mogelijk is van waar het geld naartoe gaat. Of het nu gaat om entertainment, boodschappen of nutsvoorzieningen, een uitgebreide uiteenzetting maakt een gerichte aanpak van financieel beheer mogelijk. 💡
+
+De reis ging niet alleen over het verminderen van uitgaven; het ging ook om het identificeren van kansen en het doen van strategische financiële investeringen. Misschien waren er maanden met onverwachte uitgaven, maar die momenten dienden als lessen in aanpassingsvermogen en veerkracht. 💪
+
+Kijkend naar het grotere geheel is de Money Tracker-app niet alleen een tool voor het bijhouden van uitgaven, maar ook een bron van motivatie geweest. Het stellen van financiële doelen en zien dat ze geleidelijk worden gerealiseerd, is een bewijs van de kracht van intentioneel geldbeheer. 🎯
+
+In de wereld van persoonlijke financiën is kennis inderdaad machtig. Het vermogen van de app om financiële inzichten, trends en voorspellingen te bieden, heeft geleid tot betere besluitvorming. Het gaat niet alleen om de uitgaven uit het verleden, maar ook om de voorbereiding op een meer veilige en welvarende financiële toekomst.
+
+Terwijl we afscheid nemen van dit opmerkelijke jaar, is het de moeite waard om de reis en de financiële mijlpalen te waarderen die zijn bereikt. De Money Tracker-app is een ware bondgenoot geweest in deze zoektocht naar financieel welzijn. Op naar meer financieel succes in het komende jaar! 🌟💸</value>
   </data>
   <data name="Total" xml:space="preserve">
     <value>Totaal</value>

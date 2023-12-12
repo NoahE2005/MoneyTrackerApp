@@ -245,7 +245,8 @@ namespace MoneyTrackerApp.Assests.Expenses
         using (SQLiteCommand command = new SQLiteCommand(connection))
         {
           command.CommandText = "SELECT Date AS Year, " +
-                                "SUM(Value) AS TotalExpense, " +
+                                "SUM(CASE WHEN Sign = '+' THEN Value ELSE 0 END) - " +
+                                "SUM(CASE WHEN Sign = '-' THEN Value ELSE 0 END) AS TotalExpense, " +
                                 "COUNT(DISTINCT SUBSTR(Date, 6, 2)) AS MonthCount " +
                                 "FROM Expenses " +
                                 "GROUP BY Year " +

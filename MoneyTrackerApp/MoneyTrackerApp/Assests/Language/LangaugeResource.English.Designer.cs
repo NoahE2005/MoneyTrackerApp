@@ -61,6 +61,42 @@ namespace MoneyTrackerApp.Assests.Language {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Dashboard.
+        /// </summary>
+        internal static string BtnDashboard {
+            get {
+                return ResourceManager.GetString("BtnDashboard", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Main.
+        /// </summary>
+        internal static string BtnMain {
+            get {
+                return ResourceManager.GetString("BtnMain", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Options.
+        /// </summary>
+        internal static string BtnOptions {
+            get {
+                return ResourceManager.GetString("BtnOptions", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Summary.
+        /// </summary>
+        internal static string BtnSummary {
+            get {
+                return ResourceManager.GetString("BtnSummary", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Submit.
         /// </summary>
         internal static string ButtonSubmit {
@@ -165,6 +201,24 @@ namespace MoneyTrackerApp.Assests.Language {
         internal static string StartMinimized {
             get {
                 return ResourceManager.GetString("StartMinimized", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Oh, what a challenging year it has been! 😔\nReflecting on the past months, it&apos;s clear that this year presented its share of financial hurdles. 💸 Despite the difficulties, acknowledging and learning from these experiences is crucial. Let&apos;s delve into the details of the financial journey over the course of {ExpenseFileCount} months, with total expenses amounting to {TotaalSum}.\n\nThroughout this period, the journey was marked by unexpected twists and turns. Each month brought its unique set of financial ch [rest of string was truncated]&quot;;.
+        /// </summary>
+        internal static string SummaryBad {
+            get {
+                return ResourceManager.GetString("SummaryBad", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Wow, what an incredible year it has been! 🎉\nI&apos;m thrilled to share that this financial journey has been nothing short of fantastic. 🚀\nThroughout the year, diligent tracking and smart financial decisions have paved the way for a brighter financial future. 💰\n\nIn the span of {ExpenseFileCount} months, the journey has been enlightening. Each month brought its own set of challenges and triumphs, ultimately contributing to the overall financial narrative. The total expenses for the year, a sum of {TotaalSum [rest of string was truncated]&quot;;.
+        /// </summary>
+        internal static string SummaryGood {
+            get {
+                return ResourceManager.GetString("SummaryGood", resourceCulture);
             }
         }
         
