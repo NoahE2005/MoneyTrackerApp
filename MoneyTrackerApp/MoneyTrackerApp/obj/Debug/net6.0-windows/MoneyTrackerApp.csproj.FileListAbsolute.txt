@@ -142,3 +142,4 @@ E:\Code\Git\ProefExamen\MoneyTrackerApp\MoneyTrackerApp\bin\Debug\net6.0-windows
 E:\Code\Git\ProefExamen\MoneyTrackerApp\MoneyTrackerApp\bin\Debug\net6.0-windows\runtimes\win\lib\netcoreapp2.1\System.Data.SqlClient.dll
 E:\Code\Git\ProefExamen\MoneyTrackerApp\MoneyTrackerApp\obj\Debug\net6.0-windows\MoneyTrackerApp.Assests.Language.LangaugeResource.Dutch.resources
 E:\Code\Git\ProefExamen\MoneyTrackerApp\MoneyTrackerApp\obj\Debug\net6.0-windows\MoneyTrackerApp.Assests.Language.LangaugeResource.English.resources
+E:\Code\Git\ProefExamen\MoneyTrackerApp\MoneyTrackerApp\obj\Debug\net6.0-windows\MoneyTrackerApp.sourcelink.json

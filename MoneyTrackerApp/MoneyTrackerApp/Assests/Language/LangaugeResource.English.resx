@@ -136,13 +136,13 @@
     <value>Configuration is already set to </value>
   </data>
   <data name="ChooseLanguage" xml:space="preserve">
-    <value>Choose language</value>
+    <value>Choose language:</value>
   </data>
   <data name="ClearMoney" xml:space="preserve">
-    <value>Clear money</value>
+    <value>Clear money:</value>
   </data>
   <data name="Currency" xml:space="preserve">
-    <value>Currency</value>
+    <value>Currency:</value>
   </data>
   <data name="CurrencyChanged" xml:space="preserve">
     <value>Currency changed</value>
@@ -163,7 +163,7 @@
     <value>Please restart the application for the seting to take effect</value>
   </data>
   <data name="StartMinimized" xml:space="preserve">
-    <value>Start minimized</value>
+    <value>Start minimized:</value>
   </data>
   <data name="SummaryBad" xml:space="preserve">
     <value>Oh, what a challenging year it has been! 😔\nReflecting on the past months, it's clear that this year presented its share of financial hurdles. 💸 Despite the difficulties, acknowledging and learning from these experiences is crucial. Let's delve into the details of the financial journey over the course of {ExpenseFileCount} months, with total expenses amounting to {TotaalSum}.\n\nThroughout this period, the journey was marked by unexpected twists and turns. Each month brought its unique set of financial challenges, testing resilience and adaptability. Despite the tough times, there's value in recognizing the effort put into managing expenses and navigating through uncertainties. 🔄\n\nThe Money Tracker app, a faithful companion in this financial journey, played a vital role in providing insights and helping make informed decisions. Even in challenging times, having a tool that highlights spending patterns and areas for improvement is crucial. 📉\n\nThe total expenses, while higher than desired, tell a story of survival and determination. This is not just about numbers; it's about the lessons learned, the decisions made, and the resilience shown in the face of adversity. 💪\n\nThe app's feature to categorize expenses proved especially useful during challenging times. It allowed for a closer look at where the money was going, helping identify areas for potential savings and optimizations. 💡\n\nFinancial difficulties often come with valuable insights. Perhaps there were months when unexpected expenses took a toll, but these experiences become stepping stones for future financial strategies. The ability to learn and adapt is a testament to financial maturity. 📚\n\nWhile the overall sentiment might not be celebratory, it's essential to acknowledge the progress made in managing expenses and making informed financial decisions. As we bid farewell to this challenging year, let's carry forward the lessons learned and approach the upcoming year with renewed determination. Here's to a more financially resilient future! 🌟💪</value>

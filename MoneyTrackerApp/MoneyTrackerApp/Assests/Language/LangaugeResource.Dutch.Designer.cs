@@ -115,7 +115,7 @@ namespace MoneyTrackerApp.Assests.Language {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Kies taal.
+        ///   Looks up a localized string similar to Kies taal:.
         /// </summary>
         internal static string ChooseLanguage {
             get {
@@ -124,7 +124,7 @@ namespace MoneyTrackerApp.Assests.Language {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Geld wissen.
+        ///   Looks up a localized string similar to Geld wissen:.
         /// </summary>
         internal static string ClearMoney {
             get {
@@ -133,7 +133,7 @@ namespace MoneyTrackerApp.Assests.Language {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Valuta.
+        ///   Looks up a localized string similar to Valuta:.
         /// </summary>
         internal static string Currency {
             get {
@@ -196,7 +196,7 @@ namespace MoneyTrackerApp.Assests.Language {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Start geminimaliseerd.
+        ///   Looks up a localized string similar to Start geminimaliseerd:.
         /// </summary>
         internal static string StartMinimized {
             get {

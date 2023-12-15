@@ -115,7 +115,7 @@ namespace MoneyTrackerApp.Assests.Language {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Choose language.
+        ///   Looks up a localized string similar to Choose language:.
         /// </summary>
         internal static string ChooseLanguage {
             get {
@@ -124,7 +124,7 @@ namespace MoneyTrackerApp.Assests.Language {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Clear money.
+        ///   Looks up a localized string similar to Clear money:.
         /// </summary>
         internal static string ClearMoney {
             get {
@@ -133,7 +133,7 @@ namespace MoneyTrackerApp.Assests.Language {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Currency.
+        ///   Looks up a localized string similar to Currency:.
         /// </summary>
         internal static string Currency {
             get {
@@ -196,7 +196,7 @@ namespace MoneyTrackerApp.Assests.Language {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Start minimized.
+        ///   Looks up a localized string similar to Start minimized:.
         /// </summary>
         internal static string StartMinimized {
             get {
