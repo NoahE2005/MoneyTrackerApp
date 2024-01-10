@@ -15,7 +15,7 @@ namespace MoneyTrackerApp.Assests.Language
 {
   internal class ResourceHandler
   {
-    public dynamic LoadResourceFile()
+    public static dynamic LoadResourceFile()
     {
       string language = SettingsHandler.GetLanguage();
       string languageFolder = Path.Combine(SettingsHandler.GetProjectDirectory(), "Assets/Language/");
@@ -47,7 +47,7 @@ namespace MoneyTrackerApp.Assests.Language
       }
     }
 
-    private string MapToCultureCode(string language)
+    private static string MapToCultureCode(string language)
     {
       // Map full language names to culture codes
       switch (language.ToLower())

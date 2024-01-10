@@ -26,8 +26,8 @@ namespace MoneyTrackerApp.Tabs
     private static dynamic localizedResources;
     private void LoadLocalizedResources()
     {
-      ResourceHandler resourceHandler = new ResourceHandler();
-      localizedResources = resourceHandler.LoadResourceFile();
+      //ResourceHandler resourceHandler = new ResourceHandler();
+      localizedResources = ResourceHandler.LoadResourceFile();
     }
 
     private void SetupOptions()

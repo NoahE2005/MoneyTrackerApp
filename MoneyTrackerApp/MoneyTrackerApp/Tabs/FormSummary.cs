@@ -46,8 +46,8 @@ namespace MoneyTrackerApp.Tabs
 
     private void LoadLocalizedResources()
     {
-      ResourceHandler resourceHandler = new ResourceHandler();
-      localizedResources = resourceHandler.LoadResourceFile();
+      //ResourceHandler resourceHandler = new ResourceHandler();
+      localizedResources = ResourceHandler.LoadResourceFile();
     }
     private void FormSummary_Load(object sender, EventArgs e)
     {
